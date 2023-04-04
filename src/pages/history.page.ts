@@ -39,6 +39,15 @@ import { BasePage } from "./base.page";
        
        
     }
+    async getCantidadlblFacilityInfo() {
+        await ElementActions.isElementVisible(this.lblFacilityInfo);        
+        return await ElementActions.getCountElement(this.lblFacilityInfo);
+       
+       
+    }
+
+
+
     async getValorlblHospitalInfo() {
         await ElementActions.isElementVisible(this.lblHospitalInfo);        
         return await ElementActions.getElementText(this.lblHospitalInfo);

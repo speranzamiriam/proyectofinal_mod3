@@ -28,3 +28,10 @@ async ( facility, apply, healthcareProgram,  visitDate , comment) => {
 
  });
 
+ Then('se verifican que la cantidad de registros historicos sea de {int}',
+async ( cantidad) => {  
+    expect( await history.getCantidadlblFacilityInfo()).equal(cantidad); 
+    //await driverInstance.Page.waitForTimeout(10000);
+
+ });
+ 

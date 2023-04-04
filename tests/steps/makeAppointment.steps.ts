@@ -59,3 +59,14 @@ const formattedDate = currentDate.toLocaleDateString("es-ES", {
 });
     expect( await makeAppointment.getValorvisitDateTxt()).equal(formattedDate);  
 });
+
+
+Given('Se registran {int} registros con los datos de Facility {string}, Apply for hospital {string}, HealthcareProgram {string},VisitDate {string} y Comment {string}',
+ async ( cantidad,facility, apply, healthcareProgram,  visitDate , comment) => {   
+    for(let contador = 1;contador<=cantidad;contador++) {
+    await makeAppointment.registrarInformacion(facility, apply, healthcareProgram,  visitDate , comment); 
+    await makeAppointment.guardarInformacion();  
+    await homePage.irMenuHome();
+    }
+    
+});

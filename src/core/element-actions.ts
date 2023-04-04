@@ -47,7 +47,14 @@ export class ElementActions {
         await driverInstance.Page.waitForSelector(locator);
         return await driverInstance.Page.locator(locator).inputValue();
     }
-
+    static async getCountElement(locator: string): Promise<number> {
+        let contador =0;
+        await driverInstance.Page.isVisible(locator, {
+            timeout: 10000
+        });
+        contador= await driverInstance.Page.locator(locator).count();
+        return contador;
+    }
     
 
     static async pausar(): Promise<void> {
@@ -55,11 +62,6 @@ export class ElementActions {
     }
 
    
-    // static async getTextContent(locator: string): Promise<string> {
-    //     await driverInstance.Page.waitForSelector(locator);
-    //     return await driverInstance.Page.textContent(locator);
-        
-    // }
-
+ 
     
 }
