@@ -5,7 +5,7 @@ module.exports = {
       format: [
         'html:cucumber-report.html',
         'progress-bar',
-        './reporter.ts',
+        //'./reporter.ts',
       ],
       paths: [
         './tests/features/**/*.feature'

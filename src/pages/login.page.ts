@@ -2,16 +2,16 @@ import { ElementActions } from "../core/element-actions";
 import { BasePage } from "./base.page";
 
 class LoginPage extends BasePage {
-    private email: string = 'input[type="email"]';
-    private password: string = 'input[type="password"]';
-    private loginButton: string = 'button[data-gtm-id="start-email-login"]';
+   private username: string = '#txt-username';
+    private password: string = '#txt-password';
+    private loginButton: string = '#btn-login';
 
     constructor(){
         super();
     }
 
     async setEmail(text: string) {        
-        await ElementActions.setText(this.email, text);
+        await ElementActions.setText(this.username, text);
     }
 
     async setPassword(text: string) {        
@@ -23,7 +23,7 @@ class LoginPage extends BasePage {
     }
 
     async login(emailInput: string, passwordInput: string) {
-        await ElementActions.setText(this.email, emailInput);
+        await ElementActions.setText(this.username, emailInput);
         await ElementActions.setText(this.password, passwordInput);
         await ElementActions.click(this.loginButton);
     }

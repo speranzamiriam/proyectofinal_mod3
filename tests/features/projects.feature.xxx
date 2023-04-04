@@ -1,7 +1,7 @@
 @ui-tests @api-tests
 Feature: Todoist Projects
 Background: Login into Todoist
-    Given the user logged into Todoist
+    Given el usuario ingresa al sistema
 
 @test @delete-project-api
 Scenario: Create Project

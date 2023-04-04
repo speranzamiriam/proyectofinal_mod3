@@ -23,7 +23,7 @@ class AddProject extends BasePage {
     }
     async ClickDropdownSelectColor(projectColor: string) {     
         projectColor = `//span[normalize-space()='${projectColor}']`;
-        await ElementActions.setColor(this.colorDropdown, projectColor);   
+        //await ElementActions.setColor(this.colorDropdown, projectColor);   
     } 
     async ClickToggleOption(blnOpcion: string){          
         if(blnOpcion=="True"){

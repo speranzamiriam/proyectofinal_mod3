@@ -7,9 +7,12 @@ export class ElementActions {
         await driverInstance.Page.click(locator);
     }
 
+  
+    
+
     static async setText(locator: string, text: string): Promise<void> {
         await driverInstance.Page.waitForSelector(locator);
-        await driverInstance.Page.fill(locator, text);
+        await driverInstance.Page.type(locator, text);
     }
     static async ClickText(locator: string) {
         await driverInstance.Page.waitForSelector(locator);
@@ -17,14 +20,20 @@ export class ElementActions {
     }
     
 
-    static async setColor(locator: string, text: string): Promise<void> {
+    static async setCombo(locator: string, text: string): Promise<void> {
         await driverInstance.Page.waitForSelector(locator);
-        await driverInstance.Page.click(locator);
-        await driverInstance.Page.click(text);
+        //await driverInstance.Page.click(locator);
+        await  driverInstance.Page.locator(locator).selectOption({ label: text })
+        //await driverInstance.Page.click(text);
     }
 
     static async isElementVisible(locator: string): Promise<boolean> {
         await driverInstance.Page.waitForSelector(locator);
+        return await driverInstance.Page.isVisible(locator, {
+            timeout: 10000
+        });
+    }
+    static async isElementVisibleExistent(locator: string): Promise<boolean> {        
         return await driverInstance.Page.isVisible(locator, {
             timeout: 10000
         });
@@ -34,4 +43,23 @@ export class ElementActions {
         await driverInstance.Page.waitForSelector(locator);
         return await driverInstance.Page.innerText(locator);
     }
+    static async getValueElement(locator: string): Promise<string> {
+        await driverInstance.Page.waitForSelector(locator);
+        return await driverInstance.Page.locator(locator).inputValue();
+    }
+
+    
+
+    static async pausar(): Promise<void> {
+        await driverInstance.Page.waitForTimeout(10000);
+    }
+
+   
+    // static async getTextContent(locator: string): Promise<string> {
+    //     await driverInstance.Page.waitForSelector(locator);
+    //     return await driverInstance.Page.textContent(locator);
+        
+    // }
+
+    
 }
