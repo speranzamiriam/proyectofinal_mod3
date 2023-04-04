@@ -2,7 +2,6 @@ import { Given, setDefaultTimeout, Then, When,  } from "@cucumber/cucumber";
 import { expect } from "chai";
 import { TESTDATA } from "../../config.app";
 import { driverInstance } from "../../src/core/driver";
-import { headerPage } from "../../src/pages/components/header.page";
 import { loginPage } from "../../src/pages/login.page";
 import { makeAppointment } from "../../src/pages/makeAppointment.page";
 import { homePage } from "../../src/pages/home.page";

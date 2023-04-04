@@ -5,7 +5,7 @@ module.exports = {
       format: [
         'html:cucumber-report.html',
         'progress-bar',
-        //'./reporter.ts',
+        './reporter.ts',
       ],
       paths: [
         './tests/features/**/*.feature'
@@ -22,9 +22,3 @@ module.exports = {
       publishQuiet: true,
     }
   }
-// module.exports = {
-//   default: `--format-options '{"snippetInterface": "synchronous"}'`,
-//   paths: [
-//             './tests/features/**/*.feature'
-//     //       ],
-// }
